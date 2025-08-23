@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useAuth } from '../contexts/AuthContext'
 import { useNavigate } from 'react-router-dom'
 
@@ -15,8 +15,15 @@ const Auth = () => {
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
   
-  const { signIn, signUp } = useAuth()
+  const { user, signIn, signUp } = useAuth()
   const navigate = useNavigate()
+
+  // Redirect logged-in users to home page
+  useEffect(() => {
+    if (user) {
+      navigate('/')
+    }
+  }, [user, navigate])
 
   const handleInputChange = (e) => {
     setFormData({
@@ -86,6 +93,11 @@ const Auth = () => {
     setError('')
     setSuccess('')
     setFormData({ email: '', password: '', confirmPassword: '', fullName: '', classLevel: '' })
+  }
+
+  // Don't render if user is already logged in
+  if (user) {
+    return null
   }
 
   return (

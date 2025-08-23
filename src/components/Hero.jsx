@@ -1,7 +1,21 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../contexts/AuthContext'
 
 const Hero = () => {
+  const { user } = useAuth()
+  const navigate = useNavigate()
+
+  const handleGetStarted = () => {
+    if (user) {
+      // User is logged in, redirect to classes page
+      navigate('/classes')
+    } else {
+      // User is not logged in, redirect to auth page
+      navigate('/auth')
+    }
+  }
+
   return (
     <section className="pt-24 pb-20 px-6 max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
       <div className="flex-1">
@@ -19,8 +33,11 @@ const Hero = () => {
           >
             Explore Classes
           </Link>
-          <button className="px-8 py-4 border-2 border-indigo-600 text-indigo-600 rounded-lg font-semibold hover:bg-indigo-600 hover:text-white transition">
-            Get Started Now
+          <button 
+            onClick={handleGetStarted}
+            className="px-8 py-4 border-2 border-indigo-600 text-indigo-600 rounded-lg font-semibold hover:bg-indigo-600 hover:text-white transition"
+          >
+            {user ? 'Go to Classes' : 'Get Started Now'}
           </button>
         </div>
       </div>

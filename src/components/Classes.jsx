@@ -1,6 +1,11 @@
 import React from 'react'
+import { useAuth } from '../contexts/AuthContext'
+import { useNavigate } from 'react-router-dom'
 
 const Classes = () => {
+  const { user } = useAuth()
+  const navigate = useNavigate()
+
   const classes = [
     {
       id: 6,
@@ -53,6 +58,13 @@ const Classes = () => {
     }
   ]
 
+  const handleExploreRoadmap = (classItem) => {
+    // User is guaranteed to be logged in due to ProtectedRoute
+    console.log(`Exploring roadmap for ${classItem.name}`)
+    // TODO: Navigate to roadmap page
+    // navigate(`/class/${classItem.id}/roadmap`)
+  }
+
   return (
     <div className="min-h-screen pt-20 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -62,8 +74,7 @@ const Classes = () => {
             Choose Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Class</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Navigate through structured roadmaps designed for every academic level. 
-            From foundational concepts to advanced topics, find your perfect learning path.
+            Welcome back, {user?.email}! Explore your personalized learning roadmaps and track your progress.
           </p>
         </div>
 
@@ -106,7 +117,10 @@ const Classes = () => {
                 </div>
 
                 {/* Action Button */}
-                <button className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-indigo-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl">
+                <button 
+                  onClick={() => handleExploreRoadmap(classItem)}
+                  className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-indigo-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+                >
                   Explore Roadmap
                 </button>
               </div>
@@ -121,14 +135,16 @@ const Classes = () => {
         <div className="mt-20 text-center">
           <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl p-8 md:p-12 text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Start Learning?
+              Ready to Continue Learning?
             </h2>
             <p className="text-xl mb-8 text-indigo-100 max-w-2xl mx-auto">
-              Join thousands of students who are already following structured roadmaps 
-              and achieving their academic goals with OpenLearnHub.
+              Keep up the great work! Your learning journey is just getting started.
             </p>
-            <button className="bg-white text-indigo-600 font-bold py-4 px-8 rounded-xl text-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-200 shadow-lg">
-              Get Started Today
+            <button 
+              onClick={() => navigate('/classes')}
+              className="bg-white text-indigo-600 font-bold py-4 px-8 rounded-xl text-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-200 shadow-lg"
+            >
+              Continue Learning
             </button>
           </div>
         </div>

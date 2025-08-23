@@ -7,6 +7,7 @@ import Features from './components/Features'
 import Footer from './components/Footer'
 import Classes from './components/Classes'
 import Auth from './components/Auth'
+import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
   return (
@@ -21,7 +22,11 @@ function App() {
                 <Features />
               </>
             } />
-            <Route path="/classes" element={<Classes />} />
+            <Route path="/classes" element={
+              <ProtectedRoute>
+                <Classes />
+              </ProtectedRoute>
+            } />
             <Route path="/auth" element={<Auth />} />
           </Routes>
           <Footer />
