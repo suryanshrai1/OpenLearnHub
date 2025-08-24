@@ -48,7 +48,7 @@ const About = () => {
 
   const team = [
     {
-      name: 'OpenLearnHub Team',
+      name: 'OpenLearnHub Team(Suryansh)',
       role: 'Development & Content',
       description: 'Dedicated to creating the best learning experience for students',
       avatar: '👨‍💻'

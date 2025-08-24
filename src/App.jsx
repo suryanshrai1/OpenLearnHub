@@ -11,6 +11,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 import SubjectList from './components/SubjectList'
 import SubjectDetail from './components/SubjectDetail'
 import About from './components/About'
+import Contact from './components/Contact'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               </>
             } />
             <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/classes" element={
               <ProtectedRoute>
                 <Classes />

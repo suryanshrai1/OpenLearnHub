@@ -46,8 +46,15 @@ const Navbar = () => {
               Classes
             </Link>
           </li>
+          <li>
+            <Link 
+              to="/contact" 
+              className={`hover:text-indigo-600 transition ${location.pathname === '/contact' ? 'text-indigo-600' : ''}`}
+            >
+              Contact
+            </Link>
+          </li>
           <li><a href="#features" className="hover:text-indigo-600 transition">Features</a></li>
-          <li><a href="#contact" className="hover:text-indigo-600 transition">Contact</a></li>
           
           {/* Auth Buttons */}
           {user ? (
@@ -141,8 +148,16 @@ const Navbar = () => {
                 Classes
               </Link>
             </li>
+            <li>
+              <Link 
+                to="/contact" 
+                className={`block py-2 px-4 rounded-lg hover:bg-gray-100 transition ${location.pathname === '/contact' ? 'text-indigo-600 bg-indigo-50' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact
+              </Link>
+            </li>
             <li><a href="#features" className="block py-2 px-4 rounded-lg hover:bg-gray-100 transition">Features</a></li>
-            <li><a href="#contact" className="block py-2 px-4 rounded-lg hover:bg-gray-100 transition">Contact</a></li>
             
             {/* Mobile Auth */}
             {user ? (
