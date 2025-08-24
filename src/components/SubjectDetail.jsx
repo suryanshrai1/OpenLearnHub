@@ -21,19 +21,19 @@ const SubjectDetail = () => {
           name: 'Knowing Our Numbers',
           topics: ['Place Value', 'Number System', 'Rounding Off', 'Estimation'],
           documents: [
-            { name: 'Chapter Notes', type: 'PDF', size: '2.3 MB', url: '#' },
-            { name: 'Practice Questions', type: 'PDF', size: '1.8 MB', url: '#' },
+            { name: 'Chapter Notes', type: 'PDF', size: '2.3 MB', url: 'https://www.learncbse.in/knowing-our-numbers-class-6-notes/' },
+            { name: 'Practice Questions', type: 'PDF', size: '1.8 MB', url: 'https://byjus.com/ncert-solutions-class-6-maths/chapter-1-knowing-our-numbers/' },
             { name: 'Formula Sheet', type: 'PDF', size: '0.9 MB', url: '#' },
             { name: 'Solved Examples', type: 'PDF', size: '1.5 MB', url: '#' }
           ],
           videos: [
-            { name: 'Introduction to Numbers', duration: '15:30', url: '#' },
+            { name: 'Introduction to Numbers', duration: '15:30', url: 'https://www.youtube.com/watch?v=i8EI_ZMHTAg' },
             { name: 'Place Value System', duration: '18:45', url: '#' },
             { name: 'Rounding and Estimation', duration: '12:20', url: '#' },
             { name: 'Practice Problems', duration: '20:15', url: '#' }
           ],
           books: [
-            { name: 'NCERT Textbook', publisher: 'NCERT', url: '#' },
+            { name: 'NCERT Textbook', publisher: 'NCERT', url: 'https://www.scribd.com/document/558530884/Cbse-Class-6-Ncert-Books-Math-Chapter-1-Knowing-Our-Numbers' },
             { name: 'Practice Workbook', publisher: 'Arihant', url: '#' },
             { name: 'Previous Year Papers', publisher: 'Oswaal', url: '#' },
             { name: 'Extra Questions', publisher: 'MTG', url: '#' }
@@ -209,16 +209,159 @@ const SubjectDetail = () => {
           ]
         }
       ]
+    },
+    english: {
+      name: 'English',
+      icon: '📚',
+      color: 'from-purple-500 to-pink-500',
+      description: 'Grammar, literature, and communication skills',
+      chapters: [
+        {
+          id: 1,
+          name: 'Reading Comprehension',
+          topics: ['Main Idea', 'Supporting Details', 'Context Clues', 'Inference'],
+          documents: [
+            { name: 'Reading Passages', type: 'PDF', size: '1.8 MB', url: '#' },
+            { name: 'Comprehension Questions', type: 'PDF', size: '1.2 MB', url: '#' },
+            { name: 'Vocabulary List', type: 'PDF', size: '0.8 MB', url: '#' }
+          ],
+          videos: [
+            { name: 'Reading Strategies', duration: '16:20', url: '#' },
+            { name: 'Comprehension Techniques', duration: '14:15', url: '#' }
+          ],
+          books: [
+            { name: 'NCERT Textbook', publisher: 'NCERT', url: '#' },
+            { name: 'Practice Workbook', publisher: 'Arihant', url: '#' }
+          ]
+        },
+        {
+          id: 2,
+          name: 'Grammar Fundamentals',
+          topics: ['Parts of Speech', 'Sentence Structure', 'Tenses', 'Articles'],
+          documents: [
+            { name: 'Grammar Rules', type: 'PDF', size: '2.1 MB', url: '#' },
+            { name: 'Practice Exercises', type: 'PDF', size: '1.5 MB', url: '#' }
+          ],
+          videos: [
+            { name: 'Parts of Speech', duration: '18:30', url: '#' },
+            { name: 'Sentence Types', duration: '15:45', url: '#' }
+          ],
+          books: [
+            { name: 'NCERT Textbook', publisher: 'NCERT', url: '#' },
+            { name: 'Grammar Practice', publisher: 'Arihant', url: '#' }
+          ]
+        }
+      ]
+    },
+    'social-studies': {
+      name: 'Social Studies',
+      icon: '🌍',
+      color: 'from-orange-500 to-red-500',
+      description: 'History, geography, and civics',
+      chapters: [
+        {
+          id: 1,
+          name: 'Ancient Civilizations',
+          topics: ['Indus Valley', 'Vedic Period', 'Mauryan Empire', 'Gupta Empire'],
+          documents: [
+            { name: 'Historical Timeline', type: 'PDF', size: '2.5 MB', url: '#' },
+            { name: 'Map Activities', type: 'PDF', size: '1.8 MB', url: '#' }
+          ],
+          videos: [
+            { name: 'Indus Valley Civilization', duration: '20:15', url: '#' },
+            { name: 'Ancient Indian History', duration: '22:30', url: '#' }
+          ],
+          books: [
+            { name: 'NCERT Textbook', publisher: 'NCERT', url: '#' },
+            { name: 'History Atlas', publisher: 'Arihant', url: '#' }
+          ]
+        },
+        {
+          id: 2,
+          name: 'Geography Basics',
+          topics: ['Maps and Globes', 'Continents', 'Oceans', 'Climate'],
+          documents: [
+            { name: 'World Map', type: 'PDF', size: '3.2 MB', url: '#' },
+            { name: 'Geography Notes', type: 'PDF', size: '2.0 MB', url: '#' }
+          ],
+          videos: [
+            { name: 'Understanding Maps', duration: '17:45', url: '#' },
+            { name: 'World Geography', duration: '19:20', url: '#' }
+          ],
+          books: [
+            { name: 'NCERT Textbook', publisher: 'NCERT', url: '#' },
+            { name: 'Geography Atlas', publisher: 'Arihant', url: '#' }
+          ]
+        }
+      ]
+    },
+    hindi: {
+      name: 'Hindi',
+      icon: '🇮🇳',
+      color: 'from-indigo-500 to-purple-500',
+      description: 'Hindi grammar, literature, and language skills',
+      chapters: [
+        {
+          id: 1,
+          name: 'हिंदी व्याकरण',
+          topics: ['संज्ञा', 'सर्वनाम', 'विशेषण', 'क्रिया'],
+          documents: [
+            { name: 'व्याकरण नियम', type: 'PDF', size: '2.0 MB', url: '#' },
+            { name: 'अभ्यास प्रश्न', type: 'PDF', size: '1.5 MB', url: '#' }
+          ],
+          videos: [
+            { name: 'संज्ञा और सर्वनाम', duration: '16:30', url: '#' },
+            { name: 'विशेषण और क्रिया', duration: '18:15', url: '#' }
+          ],
+          books: [
+            { name: 'NCERT पाठ्यपुस्तक', publisher: 'NCERT', url: '#' },
+            { name: 'हिंदी व्याकरण', publisher: 'Arihant', url: '#' }
+          ]
+        },
+        {
+          id: 2,
+          name: 'कहानी और कविता',
+          topics: ['कहानी पढ़ना', 'कविता समझना', 'शब्दार्थ', 'प्रश्नोत्तर'],
+          documents: [
+            { name: 'कहानी संग्रह', type: 'PDF', size: '2.8 MB', url: '#' },
+            { name: 'कविता संग्रह', type: 'PDF', size: '2.2 MB', url: '#' }
+          ],
+          videos: [
+            { name: 'कहानी पढ़ने की कला', duration: '19:45', url: '#' },
+            { name: 'कविता समझना', duration: '17:20', url: '#' }
+          ],
+          books: [
+            { name: 'NCERT पाठ्यपुस्तक', publisher: 'NCERT', url: '#' },
+            { name: 'हिंदी साहित्य', publisher: 'Arihant', url: '#' }
+          ]
+        }
+      ]
     }
   }
 
-  const subject = subjectData[subjectId]
+  // Debug logging
+  console.log('SubjectDetail - classId:', classId)
+  console.log('SubjectDetail - subjectId:', subjectId)
+  console.log('SubjectDetail - subjectId.toLowerCase():', subjectId?.toLowerCase())
+  console.log('SubjectDetail - Available subject keys:', Object.keys(subjectData))
+  console.log('SubjectDetail - Looking for subject with key:', subjectId?.toLowerCase())
+
+  const subject = subjectData[subjectId?.toLowerCase()]
+
+  // Debug alert to see what's happening
+  console.log('SubjectDetail - Final subject found:', subject)
+  if (subject) {
+    console.log('SubjectDetail - Subject name:', subject.name)
+  }
 
   if (!subject) {
+    alert(`Subject not found! Looking for: ${subjectId} (lowercase: ${subjectId?.toLowerCase()})\nAvailable subjects: ${Object.keys(subjectData).join(', ')}`)
     return (
       <div className="min-h-screen pt-20 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Subject not found</h1>
+          <p className="text-gray-600 mb-4">Looking for: {subjectId}</p>
+          <p className="text-gray-600 mb-4">Available: {Object.keys(subjectData).join(', ')}</p>
           <button
             onClick={() => navigate(`/class/${classId}`)}
             className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition"
@@ -231,10 +374,19 @@ const SubjectDetail = () => {
   }
 
   const handleResourceClick = (url, resourceType, resourceName) => {
-    // TODO: Implement actual resource handling
-    console.log(`Opening ${resourceType}: ${resourceName}`, url)
-    // For now, just show an alert
-    alert(`${resourceType}: ${resourceName}\nURL: ${url}\n\nThis feature will be implemented soon!`)
+    console.log(`Resource clicked: ${resourceType} - ${resourceName}`)
+    console.log(`URL: ${url}`)
+    
+    // Check if URL is valid and not just a placeholder
+    if (url && url !== '#' && url.startsWith('http')) {
+      // Open valid URLs in new tab
+      window.open(url, '_blank', 'noopener,noreferrer')
+      console.log(`Opening ${resourceType}: ${resourceName} in new tab`)
+    } else {
+      // Show alert for placeholder links
+      alert(`${resourceType}: ${resourceName}\n\nThis resource will be available soon!`)
+      console.log(`Placeholder link clicked for ${resourceType}: ${resourceName}`)
+    }
   }
 
   return (

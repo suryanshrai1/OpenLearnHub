@@ -85,8 +85,7 @@ const SubjectList = () => {
           {subjects.map((subject) => (
             <div
               key={subject.id}
-              onClick={() => handleSubjectClick(subject.id)}
-              className="group cursor-pointer bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
+              className="bg-white rounded-2xl shadow-lg transition-all duration-300 overflow-hidden"
             >
               {/* Gradient Header */}
               <div className={`h-32 bg-gradient-to-r ${subject.color} relative`}>
@@ -116,14 +115,16 @@ const SubjectList = () => {
                   </div>
                 </div>
 
-                {/* Action Button */}
-                <div className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-xl text-center group-hover:from-indigo-700 group-hover:to-purple-700 transition-all duration-200">
+                {/* Action Button - Only this should be clickable */}
+                <button
+                  onClick={() => {
+                    handleSubjectClick(subject.id)
+                  }}
+                  className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-200 cursor-pointer"
+                >
                   Explore Subject
-                </div>
+                </button>
               </div>
-
-              {/* Hover Effect Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/0 to-purple-600/0 group-hover:from-indigo-600/5 group-hover:to-purple-600/5 transition-all duration-300 rounded-2xl"></div>
             </div>
           ))}
         </div>
