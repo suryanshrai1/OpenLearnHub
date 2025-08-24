@@ -339,29 +339,13 @@ const SubjectDetail = () => {
     }
   }
 
-  // Debug logging
-  console.log('SubjectDetail - classId:', classId)
-  console.log('SubjectDetail - subjectId:', subjectId)
-  console.log('SubjectDetail - subjectId.toLowerCase():', subjectId?.toLowerCase())
-  console.log('SubjectDetail - Available subject keys:', Object.keys(subjectData))
-  console.log('SubjectDetail - Looking for subject with key:', subjectId?.toLowerCase())
-
   const subject = subjectData[subjectId?.toLowerCase()]
 
-  // Debug alert to see what's happening
-  console.log('SubjectDetail - Final subject found:', subject)
-  if (subject) {
-    console.log('SubjectDetail - Subject name:', subject.name)
-  }
-
   if (!subject) {
-    alert(`Subject not found! Looking for: ${subjectId} (lowercase: ${subjectId?.toLowerCase()})\nAvailable subjects: ${Object.keys(subjectData).join(', ')}`)
     return (
       <div className="min-h-screen pt-20 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Subject not found</h1>
-          <p className="text-gray-600 mb-4">Looking for: {subjectId}</p>
-          <p className="text-gray-600 mb-4">Available: {Object.keys(subjectData).join(', ')}</p>
           <button
             onClick={() => navigate(`/class/${classId}`)}
             className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition"
@@ -374,18 +358,13 @@ const SubjectDetail = () => {
   }
 
   const handleResourceClick = (url, resourceType, resourceName) => {
-    console.log(`Resource clicked: ${resourceType} - ${resourceName}`)
-    console.log(`URL: ${url}`)
-    
     // Check if URL is valid and not just a placeholder
     if (url && url !== '#' && url.startsWith('http')) {
       // Open valid URLs in new tab
       window.open(url, '_blank', 'noopener,noreferrer')
-      console.log(`Opening ${resourceType}: ${resourceName} in new tab`)
     } else {
       // Show alert for placeholder links
       alert(`${resourceType}: ${resourceName}\n\nThis resource will be available soon!`)
-      console.log(`Placeholder link clicked for ${resourceType}: ${resourceName}`)
     }
   }
 
