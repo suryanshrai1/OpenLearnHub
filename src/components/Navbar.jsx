@@ -32,6 +32,14 @@ const Navbar = () => {
           </li>
           <li>
             <Link 
+              to="/about" 
+              className={`hover:text-indigo-600 transition ${location.pathname === '/about' ? 'text-indigo-600' : ''}`}
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link 
               to="/classes" 
               className={`hover:text-indigo-600 transition ${location.pathname === '/classes' ? 'text-indigo-600' : ''}`}
             >
@@ -39,7 +47,6 @@ const Navbar = () => {
             </Link>
           </li>
           <li><a href="#features" className="hover:text-indigo-600 transition">Features</a></li>
-          <li><a href="#about" className="hover:text-indigo-600 transition">About</a></li>
           <li><a href="#contact" className="hover:text-indigo-600 transition">Contact</a></li>
           
           {/* Auth Buttons */}
@@ -118,6 +125,15 @@ const Navbar = () => {
             </li>
             <li>
               <Link 
+                to="/about" 
+                className={`block py-2 px-4 rounded-lg hover:bg-gray-100 transition ${location.pathname === '/about' ? 'text-indigo-600 bg-indigo-50' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link 
                 to="/classes" 
                 className={`block py-2 px-4 rounded-lg hover:bg-gray-100 transition ${location.pathname === '/classes' ? 'text-indigo-600 bg-indigo-50' : ''}`}
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -126,7 +142,6 @@ const Navbar = () => {
               </Link>
             </li>
             <li><a href="#features" className="block py-2 px-4 rounded-lg hover:bg-gray-100 transition">Features</a></li>
-            <li><a href="#about" className="block py-2 px-4 rounded-lg hover:bg-gray-100 transition">About</a></li>
             <li><a href="#contact" className="block py-2 px-4 rounded-lg hover:bg-gray-100 transition">Contact</a></li>
             
             {/* Mobile Auth */}

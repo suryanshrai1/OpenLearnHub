@@ -10,6 +10,7 @@ import Auth from './components/Auth'
 import ProtectedRoute from './components/ProtectedRoute'
 import SubjectList from './components/SubjectList'
 import SubjectDetail from './components/SubjectDetail'
+import About from './components/About'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
                 <Features />
               </>
             } />
+            <Route path="/about" element={<About />} />
             <Route path="/classes" element={
               <ProtectedRoute>
                 <Classes />
