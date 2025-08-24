@@ -59,11 +59,20 @@ const Classes = () => {
   ]
 
   const handleExploreRoadmap = (classItem) => {
-    // User is guaranteed to be logged in due to ProtectedRoute
-    console.log(`Exploring roadmap for ${classItem.name}`)
-    // TODO: Navigate to roadmap page
-    // navigate(`/class/${classItem.id}/roadmap`)
+    console.log('Explore Roadmap clicked for:', classItem.name, 'ID:', classItem.id)
+    console.log('Current user:', user)
+    console.log('Navigating to:', `/class/${classItem.id}`)
+    
+    // Navigate to the subject list for the selected class
+    navigate(`/class/${classItem.id}`)
   }
+
+  const testNavigation = () => {
+    console.log('Test button clicked!')
+    navigate('/class/6')
+  }
+
+  console.log('Classes component rendered, user:', user)
 
   return (
     <div className="min-h-screen pt-20 pb-16 px-4 sm:px-6 lg:px-8">
@@ -76,6 +85,14 @@ const Classes = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Welcome back, {user?.email}! Explore your personalized learning roadmaps and track your progress.
           </p>
+          
+          {/* Test Button */}
+          <button 
+            onClick={testNavigation}
+            className="mt-4 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition"
+          >
+            🧪 TEST: Go to Class 6 Subjects
+          </button>
         </div>
 
         {/* Classes Grid */}
@@ -118,15 +135,19 @@ const Classes = () => {
 
                 {/* Action Button */}
                 <button 
-                  onClick={() => handleExploreRoadmap(classItem)}
-                  className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-indigo-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+                  onClick={() => {
+                    console.log('Button clicked directly!')
+                    handleExploreRoadmap(classItem)
+                  }}
+                  className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-indigo-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl relative z-10 cursor-pointer"
+                  style={{ position: 'relative', zIndex: 10 }}
                 >
                   Explore Roadmap
                 </button>
               </div>
 
               {/* Hover Effect Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/0 to-purple-600/0 group-hover:from-indigo-600/5 group-hover:to-purple-600/5 transition-all duration-300 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/0 to-purple-600/0 group-hover:from-indigo-600/5 group-hover:to-purple-600/5 transition-all duration-300 rounded-2xl pointer-events-none"></div>
             </div>
           ))}
         </div>

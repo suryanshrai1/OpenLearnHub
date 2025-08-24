@@ -8,6 +8,8 @@ import Footer from './components/Footer'
 import Classes from './components/Classes'
 import Auth from './components/Auth'
 import ProtectedRoute from './components/ProtectedRoute'
+import SubjectList from './components/SubjectList'
+import SubjectDetail from './components/SubjectDetail'
 
 function App() {
   return (
@@ -25,6 +27,16 @@ function App() {
             <Route path="/classes" element={
               <ProtectedRoute>
                 <Classes />
+              </ProtectedRoute>
+            } />
+            <Route path="/class/:classId" element={
+              <ProtectedRoute>
+                <SubjectList />
+              </ProtectedRoute>
+            } />
+            <Route path="/class/:classId/subject/:subjectId" element={
+              <ProtectedRoute>
+                <SubjectDetail />
               </ProtectedRoute>
             } />
             <Route path="/auth" element={<Auth />} />
