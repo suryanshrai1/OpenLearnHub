@@ -20,12 +20,8 @@ function App() {
         <div className="min-h-screen flex flex-col bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100">
           <Navbar />
           <Routes>
-            <Route path="/" element={
-              <>
-                <Hero />
-                <Features />
-              </>
-            } />
+            <Route path="/" element={<Hero />} />
+            <Route path="/features" element={<Features />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/classes" element={

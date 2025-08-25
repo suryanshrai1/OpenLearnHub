@@ -19,7 +19,7 @@ const Navbar = () => {
         <Link to="/" className="text-indigo-700 font-extrabold text-2xl hover:text-indigo-800 transition">
           OpenLearnHub
         </Link>
-        
+
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8 text-gray-700 font-semibold items-center">
           <li>
@@ -54,8 +54,15 @@ const Navbar = () => {
               Contact
             </Link>
           </li>
-          <li><a href="#features" className="hover:text-indigo-600 transition">Features</a></li>
-          
+          <li>
+            <Link 
+              to="/features" 
+              className={`hover:text-indigo-600 transition ${location.pathname === '/features' ? 'text-indigo-600' : ''}`}
+            >
+              Features
+            </Link>
+          </li>
+
           {/* Auth Buttons */}
           {user ? (
             <li className="relative">
@@ -73,7 +80,7 @@ const Navbar = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              
+
               {/* Profile Dropdown */}
               {isProfileMenuOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
@@ -157,8 +164,16 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
-            <li><a href="#features" className="block py-2 px-4 rounded-lg hover:bg-gray-100 transition">Features</a></li>
-            
+            <li>
+              <Link 
+                to="/features" 
+                className={`block py-2 px-4 rounded-lg hover:bg-gray-100 transition ${location.pathname === '/features' ? 'text-indigo-600 bg-indigo-50' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Features
+              </Link>
+            </li>
+
             {/* Mobile Auth */}
             {user ? (
               <li className="border-t border-gray-200 pt-3">
