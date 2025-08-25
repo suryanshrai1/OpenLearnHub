@@ -33,7 +33,7 @@ A modern, interactive learning platform designed to empower students from Class 
 
 1. **Clone the repository**
    ```bash
-   git clone <https://github.com/suryanshrai1/OpenLearnHub>
+   git clone https://github.com/suryanshrai1/OpenLearnHub
    cd OpenLearnHub
    ```
 
