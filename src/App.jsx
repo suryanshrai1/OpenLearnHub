@@ -4,6 +4,9 @@ import { AuthProvider } from './contexts/AuthContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Features from './components/Features'
+import WhatMakesUsDifferent from './components/WhatMakesUsDifferent'
+import PlatformStats from './components/PlatformStats'
+import HowItWorks from './components/HowItWorks'
 import Footer from './components/Footer'
 import Classes from './components/Classes'
 import Auth from './components/Auth'
@@ -20,7 +23,15 @@ function App() {
         <div className="min-h-screen flex flex-col bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100">
           <Navbar />
           <Routes>
-            <Route path="/" element={<Hero />} />
+            <Route path="/" element={
+              <>
+                <Hero />
+                <Features />
+                <WhatMakesUsDifferent />
+                <PlatformStats />
+                <HowItWorks />
+              </>
+            } />
             <Route path="/features" element={<Features />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

@@ -2,46 +2,87 @@ import React from 'react'
 
 const features = [
   {
+    icon: '🎯',
+    title: 'Structured Learning Paths',
+    description: 'Well-organized roadmaps for Classes 6-12 with clear progression paths'
+  },
+  {
     icon: '📚',
-    title: 'Comprehensive Subjects',
-    desc: 'Mathematics, Science, English, Social Studies, and more — all curated for your class level.',
+    title: 'Comprehensive Resources',
+    description: 'Access to study materials, video lectures, practice questions, and reference books'
   },
   {
-    icon: '🧩',
-    title: 'Interactive Quizzes',
-    desc: 'Test your knowledge with quizzes after every lesson to solidify your understanding.',
+    icon: '🔐',
+    title: 'Personalized Experience',
+    description: 'Track your progress and access content tailored to your learning journey'
   },
   {
-    icon: '🎥',
-    title: 'Video Lessons',
-    desc: 'Watch expert teachers explain complex concepts in simple ways.',
+    icon: '📱',
+    title: 'Modern Interface',
+    description: 'Clean, responsive design that works seamlessly across all devices'
   },
   {
     icon: '🚀',
-    title: 'Progress Tracking',
-    desc: 'Track your learning progress and achieve your academic goals with ease.',
+    title: 'Continuous Updates',
+    description: 'Regular content updates and new resources added frequently'
   },
+  {
+    icon: '🎓',
+    title: 'Expert Content',
+    description: 'Curated materials from trusted educational sources and institutions'
+  }
 ]
 
 const Features = () => {
   return (
     <section id="features" className="max-w-7xl mx-auto px-6 py-20">
+
+      {/* How It Works */}
+      <div className="mb-20">
+        <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">How It Works</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="text-center">
+            <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl font-bold text-indigo-600">1</span>
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Choose Your Class</h3>
+            <p className="text-gray-600">Select your current class level from 6th to 12th grade</p>
+          </div>
+          <div className="text-center">
+            <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl font-bold text-purple-600">2</span>
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Pick a Subject</h3>
+            <p className="text-gray-600">Choose from Mathematics, Science, English, Social Studies, and more</p>
+          </div>
+          <div className="text-center">
+            <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl font-bold text-pink-600">3</span>
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Start Learning</h3>
+            <p className="text-gray-600">Access chapter-wise resources, videos, and practice materials</p>
+          </div>
+        </div>
+      </div>
+
+      {/* What Makes Us Different */}
       <h2 className="text-4xl font-extrabold text-indigo-800 text-center mb-16">
-        Why Choose OpenLearnHub?
+        What Makes Us Different
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
-        {features.map(({ icon, title, desc }) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {features.map((feature, index) => (
           <div
-            key={title}
-            className="bg-white rounded-xl p-8 shadow-lg flex flex-col items-center text-center hover:shadow-2xl transition"
+            key={index}
+            className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
           >
-            <div className="text-5xl mb-4">{icon}</div>
-            <h3 className="text-xl font-semibold text-indigo-700 mb-2">{title}</h3>
-            <p className="text-gray-600">{desc}</p>
+            <div className="text-4xl mb-4">{feature.icon}</div>
+            <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+            <p className="text-gray-600 leading-relaxed">{feature.description}</p>
           </div>
         ))}
       </div>
+
     </section>
   )
 }
